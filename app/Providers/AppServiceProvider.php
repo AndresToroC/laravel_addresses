@@ -18,5 +18,6 @@ class AppServiceProvider extends ServiceProvider
         \Form::component('bsEmail', 'components.form.email', ['name', 'value' => null, 'attributes' => []]);
         \Form::component('bsPassword', 'components.form.password', ['name', 'help']);
         \Form::component('bsSelect', 'components.form.select', ['name', 'options' => [], 'value' => null, 'attributes' => []]);
+        \Form::component('bsDate', 'components.form.date', ['name', 'value' => null, 'attributes' => []]);
     }
 }

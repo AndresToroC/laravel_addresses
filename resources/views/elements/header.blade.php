@@ -1,7 +1,7 @@
 <div class="header py-4">
     <div class="container">
         <div class="d-flex">
-            <a class="header-brand" href="{{route('home')}}" >
+            <a class="header-brand" href="{{route('home.index')}}" >
                 <img src="" class="header-brand-img" alt="Logo">
             </a>
             <div class="d-flex order-lg-2 ml-auto">
@@ -11,7 +11,8 @@
                         <span class="ml-2 d-none d-lg-block">
                             <span class="text-default">{{Auth::user()->name}}</span>
                             <small class="text-muted d-block mt-1">
-                                admin
+                                @role('admin') Administrador @endrole
+                                @role('domicilary') Domiciliario @endrole
                             </small>
                         </span>
                     </a>
@@ -46,7 +47,7 @@
             <div class="col-lg order-lg-first">
                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                     <li class="nav-item">
-                        <a href="{{route('home')}}" class="nav-link"><i class="fas fa-home"></i> Inicio</a>
+                        <a href="{{route('home.index')}}" class="nav-link"><i class="fas fa-home"></i> Inicio</a>
                     </li>
                     @role('domicilary')
                         <li class="nav-item">

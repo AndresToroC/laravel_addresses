@@ -154,7 +154,8 @@ return [
         'role' => 'Rol',
         'career' => 'Carrera',
         'street' => 'Calle',
-        'description' => 'Descripción'
+        'description' => 'Descripción',
+        'date' => 'Fecha'
     ],
 
 ];

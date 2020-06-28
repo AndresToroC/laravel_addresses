@@ -7,7 +7,8 @@ Route::get('/', function(){
 Auth::routes(['register' => true]);
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/home', 'HomeController@index')->name('home');
+    // Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('home', 'HomeController');
 });
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth', 'role:admin')->group(function() {
@@ -20,5 +21,5 @@ Route::namespace('Domicilary')->prefix('domicilary')->name('domicilary.')->middl
 
 Route::get('/logout', function() {
     Auth::logout();
-    return Redirect::route('home');
+    return Redirect::route('home.index');
 })->name('logout');
