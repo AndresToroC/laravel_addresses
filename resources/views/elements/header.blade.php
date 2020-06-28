@@ -48,6 +48,11 @@
                     <li class="nav-item">
                         <a href="{{route('home')}}" class="nav-link"><i class="fas fa-home"></i> Inicio</a>
                     </li>
+                    @role('domicilary')
+                        <li class="nav-item">
+                            <a href="{{route('domicilary.addresses.index')}}" class="nav-link"><i class="fas fa-map-marked"></i> Direcciones</a>
+                        </li>
+                    @endrole
                     @role('admin')
                         <li class="nav-item dropdown">
                             <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fas fa-cog"></i> Administración</a>

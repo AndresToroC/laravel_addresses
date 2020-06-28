@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <div class="card-title">Usuarios</div>
                     <div class="card-options">
-                        <a href="{{ route('admin.users.create') }}" class="btn" title="Agregar usuario"><i class="fas fa-plus"></i></a>
+                        <a href="{{ route('admin.users.create') }}" class="btn btn-success btn-sm">Nuevo <i class="fas fa-plus"></i></a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -28,7 +28,7 @@
                                     <td>{{ $user->email }}</td>
                                     <td>@isset($user->roles[0]['name']) {{ $user->roles[0]['name'] }} @endisset </td>
                                     <td class="text-right">
-                                        <a href="{{ route('admin.users.edit', $user->id) }}" class="btn" title="Editar usuario"><i class="fas fa-edit"></i></a>
+                                        <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-primary btn-sm">Editar <i class="fas fa-edit"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach 

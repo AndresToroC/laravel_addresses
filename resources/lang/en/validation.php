@@ -151,7 +151,10 @@ return [
         'email' => 'Correo',
         'password' => 'Contraseña',
         'password_confirmation' => 'Confirmar contraseña',
-        'role' => 'Rol'
+        'role' => 'Rol',
+        'career' => 'Carrera',
+        'street' => 'Calle',
+        'description' => 'Descripción'
     ],
 
 ];

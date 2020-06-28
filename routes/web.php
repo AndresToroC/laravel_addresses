@@ -14,6 +14,10 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth', '
     Route::resource('users', 'UserController');
 });
 
+Route::namespace('Domicilary')->prefix('domicilary')->name('domicilary.')->middleware('auth', 'role:domicilary')->group(function() {
+    Route::resource('addresses', 'AddressController');
+});
+
 Route::get('/logout', function() {
     Auth::logout();
     return Redirect::route('home');
