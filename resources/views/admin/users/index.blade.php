@@ -11,7 +11,14 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ Form::open(['route' => 'admin.users.index', 'method' => 'GET']) }}
+                                <input type="search" name="search" class="form-control" placeholder="Bucar por nombre o correo">
+                            {{ Form::close() }}
+                        </div>
+                    </div>
+                    <div class="table-responsive mt-3">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -35,6 +42,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $users->appends([])->render() }}
                 </div>
             </div>
         </div>

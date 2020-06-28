@@ -14,14 +14,14 @@ use Auth;
 
 class AddressController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $userId = Auth::user()->id;
 
         $addresses = Address::whereUserId($userId)
             ->orderBy('career')
             ->orderBy('street')
-            ->get();
+            ->searchAndPaginate();
         return view('domicilary.addresses.index', compact('addresses'));
     }
 

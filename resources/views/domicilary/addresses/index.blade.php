@@ -11,7 +11,15 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ Form::open(['route' => 'domicilary.addresses.index', 'method' => 'GET']) }}
+                                <input type="date" name="searchDate" class="form-control">
+                                {{ Form::submit('Buscar', ['class' => 'btn btn-success mt-3']) }}
+                            {{ Form::close() }}
+                        </div>
+                    </div>
+                    <div class="table-responsive mt-3">
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -48,6 +56,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $addresses->appends([])->render() }}
                 </div>
             </div>
         </div>

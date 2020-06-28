@@ -7,10 +7,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
+use App\Helper\SearchPaginate;
+
 class User extends Authenticatable
 {
     use Notifiable;
     use HasRoles;
+    use SearchPaginate;
+
+    static $search_columns = ['name', 'email'];
 
     /**
      * The attributes that are mass assignable.
